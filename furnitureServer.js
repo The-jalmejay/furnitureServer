@@ -57,8 +57,10 @@ app.get("/svr/resetData", async function (req, res) {
   // console.log(furnituredata);
   let data = JSON.stringify(furnituredata);
   try {
-    await fs.promises.writeFile(fname, data);
+    let data2 = await fs.promises.writeFile(fname, data);
     res.send("resetData success");
+    // res.send(data);
+    res.se
   } catch (err) {
     res.send(err);
   }
@@ -68,7 +70,7 @@ app.get("/svr/resetLoginData", async function (req, res) {
   // console.log(furnituredata);
   let data = JSON.stringify(loginData);
   try {
-    await fs.promises.writeFile(flogin, data);
+    let data = await fs.promises.writeFile(flogin, data);
     res.send("resetLoginData success");
   } catch (err) {
     res.send(err);

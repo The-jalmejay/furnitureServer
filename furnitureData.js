@@ -1,4 +1,4 @@
-const data = [
+const furnituredata = [
   {
     prodCode: "DS2S245",
     category: "Dining",
@@ -156,5 +156,5 @@ const loginData=[
   {email:"admin@admin.com",password:"admin",role:"admin"},
   {email:"user@user.com",password:"user",role:"user"},
 ]
-module.exports.furnituredata = data;
+module.exports.furnituredata = furnituredata;
 module.exports.loginData=loginData;
