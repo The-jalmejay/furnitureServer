@@ -137,13 +137,18 @@ app.post(
     try {
       let data = await fs.promises.readFile(fname, "utf-8");
       let obj = JSON.parse(data);
-      obj.push(body);
+      let fin=obj.find(e=>e.prodCode===body.prodCode);
+      if(!fin)
+      {obj.push(body);
       let data1 = JSON.stringify(obj);
       try {
         await fs.promises.writeFile(fname, data1);
         res.send(body);
       } catch (err) {
         res.send(err);
+      }}
+      else{
+        res.status(404).send("same Product Code");
       }
     } catch (err) {
       res.send(err);
